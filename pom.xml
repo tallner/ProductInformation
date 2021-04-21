@@ -12,14 +12,14 @@
 	<artifactId>productinformation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>productinformation</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Productinformation for the storage</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>

@@ -1,0 +1,10 @@
+[
+    {
+      "name": "nginx1",
+      "imageUri": "096925879815.dkr.ecr.eu-north-1.amazonaws.com/20210420nginx"
+    },
+    {
+      "name": "app1",
+      "imageUri": "096925879815.dkr.ecr.eu-north-1.amazonaws.com/20210420app"
+    }
+  ]

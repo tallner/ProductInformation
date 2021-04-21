@@ -1,0 +1,27 @@
+
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "app",
+        "image": "096925879815.dkr.ecr.eu-north-1.amazonaws.com/20210420app",
+        "hostname": "app",
+        "essential": false,
+        "memory": 128
+      },
+      {
+        "name": "nginx",
+        "image": "096925879815.dkr.ecr.eu-north-1.amazonaws.com/20210420nginx",
+        "hostname": "nginx",
+        "essential": true,
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 80
+          }
+        ],
+        "links": ["app"],
+        "memory": 64
+      }
+    ]
+  }
