@@ -12,9 +12,9 @@ public class Productinformation {
     private String webSite;
     private int price;
 
-    public Integer calculateCustomerPrice(int customerAddPercentage)
+    public float calculateCustomerPrice(Float customerAddPercentage)
     {
-        return (price * customerAddPercentage) / 100;
+        return price + (price * customerAddPercentage) / 100;
     }
 
     @Id
