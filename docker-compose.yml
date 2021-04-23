@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+    nginx:
+        container_name: some-nginx
+        image: nginx:latest
+        restart: always
+        ports:
+        - 80:80
+        - 443:443
+        volumes:
+        - ./nginx/conf.d:/etc/nginx/conf.d
+        depends_on:
+        - app
+    app:
+        restart: always
+        build: .
+        expose:
+        - "8080"

@@ -1,5 +1,8 @@
 # ProductInformation
 
+Design branch includes Code design, build setup and AWS pipeline
+=======
+
 Microservice1, CRUD+database
 Language: Java
 
@@ -19,6 +22,3 @@ List all products
 Update certain product
 
 -- Tests --
-
-
-
