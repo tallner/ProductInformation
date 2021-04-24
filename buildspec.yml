@@ -1,23 +1,37 @@
+#version: 0.2
+#
+#phases:
+#  pre_build:
+#    commands:
+#     - echo Logging in to Amazon ECR...
+#     - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 172446528082.dkr.ecr.eu-north-1.amazonaws.com
+#  build:
+#    commands:
+#      - echo Build started on 
+#      - mvn  -DskipTests clean package  
+#      - docker-compose --file=docker-compose-prod.yml build
+#  post_build:
+#    commands:
+#      - echo Pushing the Docker image...
+#      - docker-compose --file=docker-compose-prod.yml push
+#artifacts:
+#  files:
+#    - imagedefinitions.json
+#    - Dockerrun.aws.json
+###################################################################
 version: 0.2
-
 phases:
   pre_build:
     commands:
-     - echo Logging in to Amazon ECR...
-     - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 172446528082.dkr.ecr.eu-north-1.amazonaws.com
+      - echo Entered prebuild phase
   build:
     commands:
-      - echo Build started on 
-      - mvn  -DskipTests clean package  
-      - docker-compose --file=docker-compose-prod.yml build
-      # - docker build -t 096925879815.dkr.ecr.eu-north-1.amazonaws.com/app1:latest .
+      - echo Build started on
+      - mvn clean package
   post_build:
     commands:
-      - echo Pushing the Docker image...
-      - docker-compose --file=docker-compose-prod.yml push
-      # - docker push 096925879815.dkr.ecr.eu-north-1.amazonaws.com/app1:latest
-
+      - echo Build completed
 artifacts:
   files:
-    - imagedefinitions.json
-    - Dockerrun.aws.json
+    - target/productinformation-0.0.1-SNAPSHOT.jar
+  discard-paths: yes
