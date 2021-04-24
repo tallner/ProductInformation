@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Productinformation {
 
     private String name;
-    private String webSite;
+    private String link;
     private int price;
 
     public float calculateCustomerPrice(Float customerAddPercentage)
@@ -30,12 +30,12 @@ public class Productinformation {
         this.name = name;
     }
 
-    public String getWebSite() {
-        return this.webSite;
+    public String getlink() {
+        return this.link;
     }
 
-    public void setWebSite(String webSite) {
-        this.webSite = webSite;
+    public void setlink(String link) {
+        this.link = link;
     }
 
     public int getPrice() {
