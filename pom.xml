@@ -50,6 +50,39 @@
 		</dependency>
 	</dependencies>
 
+	<profiles> 
+
+		<profile>
+			<id>dev</id>
+			<activation>
+					<activeByDefault>true</activeByDefault>
+				</activation>
+			<properties>
+				<activatedProperties>dev</activatedProperties>
+			</properties>	 
+		</profile>
+
+		<profile>
+			<id>production</id>
+			<properties>
+				<activatedProperties>production</activatedProperties>
+			</properties>	 
+				<build>
+					<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<debug>false</debug> 
+							<optimize>true</optimize>
+						</configuration>
+						</plugin>
+					</plugins>
+				</build>
+		</profile>
+
+ 	</profiles>	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -57,6 +90,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 
 </project>
