@@ -1,5 +1,5 @@
 com\cte\productinformation\ProductinformationService.class
+com\cte\productinformation\ProductinformationApplication.class
 com\cte\productinformation\Productinformation.class
 com\cte\productinformation\ProductinformationRepository.class
-com\cte\productinformation\ProductinformationApplication.class
 com\cte\productinformation\ProductinformationController.class
