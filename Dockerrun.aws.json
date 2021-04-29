@@ -7,7 +7,10 @@
         "image": "172446528082.dkr.ecr.eu-north-1.amazonaws.com/productinformation",
         "hostname": "app",
         "essential": false,
-        "memory": 128
+        "memory": 128,
+        "links": [
+          "db"
+        ],
       },
       {
         "name": "nginx",

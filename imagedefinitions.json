@@ -6,5 +6,9 @@
     {
       "name": "app",
       "imageUri": "172446528082.dkr.ecr.eu-north-1.amazonaws.com/productinformation"
+    },
+    {
+      "name": "db",
+      "imageUri": "172446528082.dkr.ecr.eu-north-1.amazonaws.com/db"
     }
   ]

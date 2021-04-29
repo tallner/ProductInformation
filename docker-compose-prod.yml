@@ -12,6 +12,7 @@ services:
             - ./nginx/conf.d:/etc/nginx/conf.d
         depends_on:
             - app
+
     app:
         restart: always
         build: 
@@ -19,3 +20,21 @@ services:
         image: 172446528082.dkr.ecr.eu-north-1.amazonaws.com/productinformation
         expose:
         - "8080"
+        depends_on:
+            - db_mysql
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:mysql://db_mysql:3306/productinformation
+            SPRING_DATASOURCE_USERNAME: root
+            SPRING_DATASOURCE_PASSWORD: hejsan123
+
+    db_mysql:
+        image: mysql:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=hejsan123
+            - MYSQL_DATABASE=productinformation
+            - MYSQL_PASSWORD=hejsan123
+        ports:
+            - "3306:3306"
+        expose: 
+            - "3306"
+    
